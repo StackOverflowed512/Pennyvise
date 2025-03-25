@@ -1,0 +1,118 @@
+/* Phone Frame */
+.phoneFrame {
+  width: 300px;
+  height: 600px;
+  background-color: #1a1f2e;
+  border-radius: 40px; /* Rounded corners like iPhone 16 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+  border: 10px solid #0a0f1f;
+}
+
+/* Dynamic Island */
+.dynamicIsland {
+  width: 100px;
+  height: 30px;
+  background-color: #0a0f1f;
+  border-radius: 20px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+/* Phone Screen */
+.phoneScreen {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1f2e;
+  border-radius: 30px; /* Slightly rounded corners for the screen */
+  overflow-y: auto;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between sections */
+}
+
+/* Section Titles */
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: white;
+}
+
+/* Insights Section */
+.insightItem {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.insightBullet {
+  width: 8px;
+  height: 8px;
+  background-color: #4f46e5;
+  border-radius: 50%;
+}
+
+.insightText {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+}
+
+/* Predictions Section */
+.predictionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.stockSymbol {
+  font-size: 1rem;
+  color: white;
+}
+
+.predictionBadge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 1.5rem;
+  min-width: 90px;
+}
+
+/* Stocks Section */
+.stockItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.stockName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.stockPrice {
+  font-size: 0.875rem;
+  color: white;
+}
+
+.stockChange {
+  font-weight: 500;
+}
+.phoneFrame {
+  background: linear-gradient(135deg, #1a1f2e, #0a0f1f);
+}

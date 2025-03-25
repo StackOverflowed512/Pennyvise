@@ -1,0 +1,28 @@
+.insight-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.insight-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+}
+
+.insight-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #374151;
+}
+
+@media (max-width: 640px) {
+  .insight-text {
+    font-size: 0.875rem;
+  }
+}

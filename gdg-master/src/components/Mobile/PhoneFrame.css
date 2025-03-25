@@ -1,0 +1,37 @@
+.phone-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.phone-frame {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  border: 14px solid #18181b;
+  border-radius: 55px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 160px;
+  height: 35px;
+  border-bottom-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  transform: translateX(-50%);
+  background-color: #18181b;
+  z-index: 1000;
+}
+
+.phone-content {
+  overflow: auto;
+  position: relative;
+  flex: 1;
+}

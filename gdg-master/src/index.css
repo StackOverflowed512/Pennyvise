@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-gradient-to-br from-gray-900 to-gray-800 text-white font-sans;
+    }
+}
+
+@layer components {
+    .glass-card {
+        @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-xl;
+    }
+
+    .gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500 bg-[length:200%_auto] animate-gradient;
+    }
+
+    .hover-card {
+        @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-500/20;
+    }
+
+    .btn-primary {
+        @apply px-6 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-xl font-medium 
+           transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/30 hover:-translate-y-1
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+    }
+
+    .btn-secondary {
+        @apply px-6 py-3 bg-white/10 text-white rounded-xl font-medium 
+           transition-all duration-300 hover:bg-white/20 hover:-translate-y-1
+           focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-gray-900;
+    }
+
+    .nav-link {
+        @apply text-gray-300 hover:text-white transition-colors duration-200;
+    }
+
+    .section-title {
+        @apply text-4xl font-bold text-center mb-12 gradient-text;
+    }
+
+    .card-grid {
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-primary-500 to-secondary-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply from-primary-600 to-secondary-600;
+}
