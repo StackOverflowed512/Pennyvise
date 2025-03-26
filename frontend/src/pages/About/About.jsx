@@ -27,7 +27,7 @@ const About = () => {
             email: "sakshinshinde29@gmail.com",
             linkedin: "https://www.linkedin.com/in/sakshi-shinde-913733317",
             github: "#",
-            photo: "https://adaptcommunitynetwork.org/wp-content/uploads/2023/09/person-placeholder.jpg",
+            photo: "https://github.com/Sakshi411910",
         },
         {
             name: "Pranav Chaudhari",
