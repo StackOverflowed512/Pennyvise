@@ -49,11 +49,9 @@ def chat():
 
         # Generate response using Gemini
         response = model.generate_content(prompt)
-        plain_text_response = markdown2.markdown(response.text, extras=["strip"])
-        
-        # Return the generated response
+        # Return the plain text response without HTML conversion
         return jsonify({
-            'response': plain_text_response
+            'response': response.text
         }), 200
 
     except Exception as e:

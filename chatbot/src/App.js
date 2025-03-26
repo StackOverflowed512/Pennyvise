@@ -39,17 +39,16 @@ function App() {
         setLoading(true);
         setError("");
         try {
-            // Send the user's message to the backend
             const result = await axios.post("https://pennyvise.onrender.com/api/chat", {
                 message: message,
             });
-            setResponse(result.data.response); // Set the response from Gemini
-            setMessage(""); // Clear the input field
+            setResponse(result.data.response); // Direct use of response without HTML stripping
+            setMessage("");
         } catch (error) {
             console.error("Error:", error);
             setError(
                 error.response?.data?.error ||
-                    "Sorry, there was an error processing your request."
+                "Sorry, there was an error processing your request."
             );
         }
         setLoading(false);

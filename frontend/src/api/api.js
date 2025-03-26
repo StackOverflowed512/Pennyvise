@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://pennyvise.onrender.com/api";
+const BASE_URL = "https://pennyvise-backend.onrender.com/api";
 
 /**
  * Sends a message to the chatbot API and retrieves the response.

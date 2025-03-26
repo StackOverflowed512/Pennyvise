@@ -4,6 +4,8 @@ import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Main.module.css";
 
+const API_BASE_URL = "https://pennyvise-backend.onrender.com/";
+
 const Main = () => {
     const [symbol, setSymbol] = useState("");
     const [analysisResult, setAnalysisResult] = useState(null);
@@ -34,12 +36,8 @@ const Main = () => {
 
         try {
             const [detailsResponse, predictionResponse] = await Promise.all([
-                axios.get(
-                    `http://localhost:5000/api/stock?symbol=${symbol.trim()}`
-                ),
-                axios.get(
-                    `http://localhost:5000/api/predict_with_info?symbol=${symbol.trim()}`
-                ),
+                axios.get(`${API_BASE_URL}/api/stock?symbol=${symbol.trim()}`),
+                axios.get(`${API_BASE_URL}/api/predict_with_info?symbol=${symbol.trim()}`),
             ]);
 
             // Parse the AI insights into structured data
