@@ -17,7 +17,7 @@ load_dotenv()
 # Initialize Flask app
 app = Flask(__name__)
 # Update CORS configuration to allow only the Netlify frontend domain
-CORS(app, resources={r"/*": {"origins": "https://67e3c50577734c2a7957dec7--effortless-moxie-b69c5d.netlify.app/"}})
+CORS(app)
 
 # Configure Gemini API
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
