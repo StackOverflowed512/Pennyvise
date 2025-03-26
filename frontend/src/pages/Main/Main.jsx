@@ -4,7 +4,7 @@ import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Main.module.css";
 
-const API_BASE_URL = "https://pennyvise-backend.onrender.com/";
+const API_BASE_URL = "https://pennyvise.onrender.com"; // Ensure this is correct
 
 const Main = () => {
     const [symbol, setSymbol] = useState("");
