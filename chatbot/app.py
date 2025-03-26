@@ -8,6 +8,7 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
+import markdown2
 
 
 # Load environment variables
@@ -48,10 +49,11 @@ def chat():
 
         # Generate response using Gemini
         response = model.generate_content(prompt)
+        plain_text_response = markdown2.markdown(response.text, extras=["strip"])
         
         # Return the generated response
         return jsonify({
-            'response': response.text
+            'response': plain_text_response
         }), 200
 
     except Exception as e:
@@ -225,12 +227,13 @@ def predict_stock_price_with_info():
         # Retrieve stock information using Gemini API
         prompt = f"Provide detailed information about the stock with symbol {symbol}."
         gemini_response = model.generate_content(prompt)
+        plain_text_info = markdown2.markdown(gemini_response.text, extras=["strip"])
 
         return jsonify({
             'symbol': symbol,
             'predicted_price': round(predicted_price, 2),
             'next_day': next_day.strftime('%Y-%m-%d'),
-            'stock_info': gemini_response.text
+            'stock_info': plain_text_info
         }), 200
 
     except Exception as e:
