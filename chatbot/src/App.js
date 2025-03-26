@@ -40,7 +40,7 @@ function App() {
         setError("");
         try {
             // Send the user's message to the backend
-            const result = await axios.post("http://localhost:5000/api/chat", {
+            const result = await axios.post("https://pennyvise.onrender.com/api/chat", {
                 message: message,
             });
             setResponse(result.data.response); // Set the response from Gemini
