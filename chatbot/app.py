@@ -25,7 +25,7 @@ if not GEMINI_API_KEY:
     raise ValueError("Gemini API key not found in environment variables.")
 
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash')  # Use 'gemini-pro' for text-based queries
+model = genai.GenerativeModel('gemini-1.5-flash')  
 
 @app.route('/api/chat', methods=['POST'])
 def chat():

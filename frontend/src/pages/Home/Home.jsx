@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
 import ImageCarousel from "../../components/ImageCarousel/ImageCarousel";
 import Mobile from "../../components/Mobile/Mobile";
+import NewGetStartedButton from "../../components/NewGetStartedButton/NewGetStartedButton"; // new import
+import NewWatchButton from "../../components/NewWatchButton/NewWatchButton";
 
 const Home = () => {
     // Unsplash image URLs
@@ -21,7 +23,7 @@ const Home = () => {
             "https://images.unsplash.com/photo-1625225230517-7426c1be750c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     };
 
-    const heading = "Your Personal Gen AI Finance Assistant";
+    const heading = "Your Personal Gen-AI Finance Assistant";
     const [visibleText, setVisibleText] = useState("");
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showMobile, setShowMobile] = useState(false);
@@ -54,19 +56,19 @@ const Home = () => {
     // FAQ data
     const faqData = [
         {
-            question: "What is GenAI Finance?",
-            answer: "GenAI Finance is an AI-powered platform that provides personalized financial insights, real-time analytics, and portfolio management tools to help you make smarter financial decisions.",
+            question: "What is PennyVise?",
+            answer: "PennyVise is an AI-powered platform that provides personalized financial insights, real-time analytics, and portfolio management tools to help you make smarter financial decisions.",
         },
         {
-            question: "How does GenAI Finance work?",
-            answer: "GenAI Finance uses advanced AI algorithms to analyze your financial data and provide tailored recommendations. You can set goals, track progress, and execute trades directly through the platform.",
+            question: "How does PennyVise work?",
+            answer: "PennyVise uses advanced AI algorithms to analyze your financial data and provide tailored recommendations. You can set goals, track progress, and execute trades directly through the platform.",
         },
         {
-            question: "Is my data secure with GenAI Finance?",
+            question: "Is my data secure with PennyVise?",
             answer: "Yes, we use state-of-the-art encryption and security protocols to ensure your data is safe and secure.",
         },
         {
-            question: "Can I use GenAI Finance for free?",
+            question: "Can I use PennyVise for free?",
             answer: "Yes, we offer a free tier with basic features. For advanced features, you can upgrade to our premium plan.",
         },
         {
@@ -100,7 +102,7 @@ const Home = () => {
                         alt="Logo"
                         className={styles.logoImage}
                     />
-                    <span className={styles.logo}>GenAI Finance</span>
+                    <span className={styles.logo}>PennyVise</span>
                 </div>
                 <div className={styles.navRight}>
                     <button
@@ -177,21 +179,11 @@ const Home = () => {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 1.5 }}
                     >
-                        <Link to="/signup" className={styles.heroButtonPrimary}>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                Get Started
-                            </motion.button>
+                        <Link to="/signup">
+                            <NewGetStartedButton />
                         </Link>
-                        <Link to="/demo" className={styles.heroButtonSecondary}>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                Live Demo
-                            </motion.button>
+                        <Link to="/demo" className={styles.ctaButtonSecondary}>
+                            <NewWatchButton />
                         </Link>
                     </motion.div>
                 </div>
@@ -278,7 +270,7 @@ const Home = () => {
             <section className={styles.features}>
                 <div className={styles.sectionContainer}>
                     <h2 className={styles.sectionTitle}>
-                        Why Choose GenAI Finance?
+                        Why Choose PennyVise?
                     </h2>
                     <p className={styles.sectionSubtitle}>
                         Powerful features designed for your financial success
@@ -349,11 +341,12 @@ const Home = () => {
             {/* Stats Section */}
             <section className={styles.stats}>
                 <div className={styles.statsContainer}>
+                    {/* These are Placeholder for NOW. */}
                     {[
                         { value: "10M+", label: "Users Worldwide" },
                         { value: "99.9%", label: "Uptime Reliability" },
                         { value: "24/7", label: "Customer Support" },
-                        { value: "256-bit", label: "Encryption" },
+                        { value: "100+", label: "Financial Tools" },
                     ].map((stat, index) => (
                         <div key={index} className={styles.statItem}>
                             <motion.h3
@@ -426,25 +419,15 @@ const Home = () => {
                         Ready to transform your financial future?
                     </h2>
                     <p className={styles.ctaSubtitle}>
-                        Join thousands of users who trust GenAI Finance for
-                        their financial decisions
+                        Join thousands of users who trust PennyVise for their financial
+                        decisions
                     </p>
                     <div className={styles.ctaButtons}>
-                        <Link to="/signup" className={styles.ctaButtonPrimary}>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                Get Started Free
-                            </motion.button>
+                        <Link to="/signup">
+                            <NewGetStartedButton />
                         </Link>
                         <Link to="/demo" className={styles.ctaButtonSecondary}>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                Watch Demo
-                            </motion.button>
+                            <NewWatchButton />
                         </Link>
                     </div>
                 </div>
@@ -461,7 +444,7 @@ const Home = () => {
                                 className={styles.footerLogoImage}
                             />
                             <span className={styles.footerLogo}>
-                                GenAI Finance
+                                PennyVise
                             </span>
                             <p className={styles.footerTagline}>
                                 Your personal AI finance assistant
@@ -529,7 +512,7 @@ const Home = () => {
                     </div>
                     <div className={styles.footerBottom}>
                         <p className={styles.footerCopyright}>
-                            &copy; {new Date().getFullYear()} GenAI Finance. All
+                            &copy; {new Date().getFullYear()} PennyVise. All
                             rights reserved.
                         </p>
                         <div className={styles.footerSocial}>

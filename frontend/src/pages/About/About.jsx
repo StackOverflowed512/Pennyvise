@@ -7,31 +7,31 @@ const About = () => {
     const teamMembers = [
         {
             name: "Omkar Mutyalwar",
-            role: "Role",
+            role: "Web-Dev",
             email: "omkarmutyalwar5@gmail.com",
             linkedin: "https://www.linkedin.com/in/omkar-mutyalwar/",
-            github: "#",
+            github: "https://github.com/StackOverflowed512",
             photo: "https://adaptcommunitynetwork.org/wp-content/uploads/2023/09/person-placeholder.jpg",
         },
         {
             name: "Vaishnav Mankar",
-            role: "Role",
+            role: "MLOps",
             email: "pict.vaishnav@gmail.com",
-            linkedin: "https://www.linkedin.com/in/janesmith",
-            github: "#",
+            linkedin: "https://www.linkedin.com/in/vaishnav-mankar",
+            github: "https://github.com/myselfmankar",
             photo: "https://adaptcommunitynetwork.org/wp-content/uploads/2023/09/person-placeholder.jpg",
         },
         {
             name: "Sakshi Shinde",
-            role: "Role",
-            email: "sakshi@gmail.com",
-            linkedin: "https://www.linkedin.com/in/sakshi",
+            role: "Team Lead",
+            email: "sakshinshinde29@gmail.com",
+            linkedin: "https://www.linkedin.com/in/sakshi-shinde-913733317",
             github: "#",
             photo: "https://adaptcommunitynetwork.org/wp-content/uploads/2023/09/person-placeholder.jpg",
         },
         {
             name: "Pranav Chaudhari",
-            role: "Role",
+            role: "UI/UX",
             email: "pranav.chaudhari@mitwpu.edu.in",
             linkedin:
                 " https://www.linkedin.com/in/pranav-amol-chaudhari-849170344",
@@ -49,7 +49,7 @@ const About = () => {
             <nav className={styles.navbar}>
                 <div className={styles.navLeft}>
                     <span className={styles.logo}>
-                        GenAI<span>Finance</span>
+                        PennyVise<span></span>
                     </span>
                 </div>
                 <div className={styles.navRight}>
@@ -82,7 +82,7 @@ const About = () => {
                     <div className={styles.aboutContent}>
                         <h2 className={styles.sectionTitle}>Our Vision</h2>
                         <p className={styles.aboutText}>
-                            At GenAI Finance, we're transforming financial
+                            At PennyVise , we're transforming financial
                             management through artificial intelligence. Our
                             platform delivers real-time insights, predictive
                             analytics, and personalized investment strategies to
@@ -115,7 +115,7 @@ const About = () => {
                 <section className={styles.teamSection}>
                     <h2 className={styles.sectionTitle}>Meet The Team</h2>
                     <p className={styles.sectionSubtitle}>
-                        The brilliant minds behind GenAI Finance
+                        The brilliant minds behind PennyVise Finance
                     </p>
 
                     <div className={styles.teamGrid}>
@@ -176,16 +176,16 @@ const About = () => {
             {/* Footer */}
             <footer className={styles.footer}>
                 <div className={styles.footerContent}>
-                    <div className={styles.footerLogo}>GenAI Finance</div>
+                    <div className={styles.footerLogo}>PennyVise</div>
                     <div className={styles.footerLinks}>
                         <Link to="/">Home</Link>
                         <Link to="/about">About</Link>
                         <Link to="/features">Features</Link>
-                        <Link to="/contact">Contact</Link>
+                        <Link to="https://www.linkedin.com/in/vaishnav-mankar">Contact</Link>
                     </div>
                     <div className={styles.footerLegal}>
                         <p>
-                            &copy; {new Date().getFullYear()} GenAI Finance. All
+                            &copy; {new Date().getFullYear()} PennyVise. All
                             rights reserved.
                         </p>
                     </div>
