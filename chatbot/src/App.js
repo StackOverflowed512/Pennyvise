@@ -42,7 +42,7 @@ function App() {
             const result = await axios.post("https://pennyvise.onrender.com/api/chat", {
                 message: message,
             });
-            setResponse(result.data.response); // Direct use of response without HTML stripping
+            setResponse(result.data.response); 
             setMessage("");
         } catch (error) {
             console.error("Error:", error);

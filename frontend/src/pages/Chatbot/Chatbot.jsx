@@ -38,8 +38,20 @@ const Chatbot = () => {
         setConversation([...conversation, userMessage]);
 
         try {
-            const result = await fetchChatbotResponse(message);
-            const botMessage = { text: result.response, sender: "bot" };
+            const result = await fetch("https://pennyvise.onrender.com/api/chat", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ message }),
+            });
+
+            if (!result.ok) {
+                throw new Error("Failed to fetch response");
+            }
+
+            const data = await result.json();
+            const botMessage = { text: data.response, sender: "bot" };
             setConversation((prev) => [...prev, botMessage]);
             setMessage("");
         } catch (err) {
