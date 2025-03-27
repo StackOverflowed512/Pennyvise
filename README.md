@@ -17,7 +17,7 @@ Hosted on Netlify: [Live Demo](https://pennyvise.netlify.app/)
 - **User-Friendly Interface**: Intuitive design for seamless navigation.
 - **Dynamic Visuals**: Stunning UI with integrated images and animations.
 
-> ![Screenshot](./frontend/assests/landing.png)  // Add a screenshot of your UI here
+> ![Screenshot](./frontend/assests/landing.png)  
 
 ---
 
