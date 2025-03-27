@@ -26,8 +26,8 @@ const About = () => {
             role: "Team Lead",
             email: "sakshinshinde29@gmail.com",
             linkedin: "https://www.linkedin.com/in/sakshi-shinde-913733317",
-            github: "#",
-            photo: "https://github.com/Sakshi411910",
+            github: "https://github.com/Sakshi411910",
+            photo: "https://adaptcommunitynetwork.org/wp-content/uploads/2023/09/person-placeholder.jpg",
         },
         {
             name: "Pranav Chaudhari",

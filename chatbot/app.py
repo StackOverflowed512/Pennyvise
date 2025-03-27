@@ -112,7 +112,7 @@ def get_top_stocks():
             reverse=True
         )
 
-        return jsonify({"top_stocks": ranked_stocks[:5]}), 200
+        return jsonify({"top_stocks": ranked_stocks[:8]}), 200
 
     except Exception as e:
         print("Error:", e)
