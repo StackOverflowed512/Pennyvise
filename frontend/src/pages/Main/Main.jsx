@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Main.module.css";
 
 const API_BASE_URL = "https://pennyvise.onrender.com"; // For all other endpoints
-
+// const LOCAL_API_URL = "http://localhost:5000"; // For top stocks only
 
 const Main = () => {
     const [symbol, setSymbol] = useState("");
