@@ -1009,3 +1009,95 @@
         font-size: 0.875rem;
     }
 }
+/* Add these new styles to your existing Main.module.css */
+
+.topStocksSection {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sectionHeader {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.topStocksGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.stockCard {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.stockHeader {
+    margin-bottom: 0.8rem;
+}
+
+.stockName {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #2c3e50;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.stockSymbol {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    font-weight: bold;
+}
+
+.priceSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.currentPrice {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.positiveChange {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.negativeChange {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.stockDetails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+}
+
+.detailItem {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.detailItem span:first-child {
+    color: #7f8c8d;
+}
+
+.detailItem span:last-child {
+    font-weight: 500;
+    color: #2c3e50;
+}

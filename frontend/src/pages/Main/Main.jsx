@@ -4,7 +4,8 @@ import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Main.module.css";
 
-const API_BASE_URL = "https://pennyvise.onrender.com"; // Ensure this is correct
+const API_BASE_URL = "https://pennyvise.onrender.com"; // For all other endpoints
+const LOCAL_API_URL = "http://localhost:5000"; // For top stocks only
 
 const Main = () => {
     const [symbol, setSymbol] = useState("");
@@ -14,14 +15,32 @@ const Main = () => {
     const [activeTab, setActiveTab] = useState("details");
     const [recentSearches, setRecentSearches] = useState([]);
     const [showTermsPopup, setShowTermsPopup] = useState(false);
+    const [topStocks, setTopStocks] = useState([]);
+    const [loadingTopStocks, setLoadingTopStocks] = useState(true);
     const navigate = useNavigate();
 
-    // Load recent searches from localStorage
+    // Load recent searches from localStorage and fetch top stocks
     useEffect(() => {
         const savedSearches = localStorage.getItem("recentSearches");
         if (savedSearches) {
             setRecentSearches(JSON.parse(savedSearches));
         }
+
+        // Fetch top stocks from localhost
+        const fetchTopStocks = async () => {
+            try {
+                const response = await axios.get(
+                    `${LOCAL_API_URL}/api/top_stocks`
+                );
+                setTopStocks(response.data.top_stocks);
+            } catch (err) {
+                console.error("Error fetching top stocks:", err);
+            } finally {
+                setLoadingTopStocks(false);
+            }
+        };
+
+        fetchTopStocks();
     }, []);
 
     const handleAnalyze = async () => {
@@ -37,7 +56,9 @@ const Main = () => {
         try {
             const [detailsResponse, predictionResponse] = await Promise.all([
                 axios.get(`${API_BASE_URL}/api/stock?symbol=${symbol.trim()}`),
-                axios.get(`${API_BASE_URL}/api/predict_with_info?symbol=${symbol.trim()}`),
+                axios.get(
+                    `${API_BASE_URL}/api/predict_with_info?symbol=${symbol.trim()}`
+                ),
             ]);
 
             // Parse the AI insights into structured data
@@ -158,8 +179,88 @@ const Main = () => {
                 </motion.div>
             </header>
 
-            {/* Main Analysis Section */}
+            {/* Main Content Section */}
             <main className={styles.mainContent}>
+                {/* Top Stocks Section */}
+                {!loadingTopStocks && topStocks.length > 0 && (
+                    <motion.div
+                        className={styles.topStocksSection}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.5 }}
+                    >
+                        <h2 className={styles.sectionHeader}>
+                            Top Stocks to Watch
+                        </h2>
+                        <div className={styles.topStocksGrid}>
+                            {topStocks.map((stock, index) => (
+                                <motion.div
+                                    key={stock.symbol}
+                                    className={styles.stockCard}
+                                    whileHover={{ scale: 1.03 }}
+                                    transition={{ duration: 0.2 }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    
+                                >
+                                    <div className={styles.stockHeader}>
+                                        <h3 className={styles.stockName}>
+                                            {stock.name}
+                                        </h3>
+                                        <span className={styles.stockSymbol}>
+                                            {stock.symbol}
+                                        </span>
+                                    </div>
+                                    <div className={styles.priceSection}>
+                                        <span className={styles.currentPrice}>
+                                            ${stock.current_price.toFixed(2)}
+                                        </span>
+                                        <span
+                                            className={
+                                                stock.upside_pct >= 0
+                                                    ? styles.positiveChange
+                                                    : styles.negativeChange
+                                            }
+                                        >
+                                            {stock.upside_pct >= 0 ? "↑" : "↓"}{" "}
+                                            {Math.abs(stock.upside_pct)}%
+                                        </span>
+                                    </div>
+                                    <div className={styles.stockDetails}>
+                                        <div className={styles.detailItem}>
+                                            <span>52W High:</span>
+                                            <span>
+                                                $
+                                                {stock["52_week_high"].toFixed(
+                                                    2
+                                                )}
+                                            </span>
+                                        </div>
+                                        <div className={styles.detailItem}>
+                                            <span>52W Low:</span>
+                                            <span>
+                                                $
+                                                {stock["52_week_low"].toFixed(
+                                                    2
+                                                )}
+                                            </span>
+                                        </div>
+                                        <div className={styles.detailItem}>
+                                            <span>P/E Ratio:</span>
+                                            <span>
+                                                {stock.pe_ratio
+                                                    ? stock.pe_ratio.toFixed(2)
+                                                    : "N/A"}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+
+                {/* Search and Analysis Section */}
                 <motion.div
                     className={styles.searchCard}
                     initial={{ opacity: 0, y: 20 }}
@@ -796,9 +897,9 @@ const Main = () => {
                                     <h4>Important Notice</h4>
                                     <p>
                                         The predictions and analysis provided by
-                                        PennyVise are generated by
-                                        artificial intelligence and should not
-                                        be considered as financial advice.
+                                        PennyVise are generated by artificial
+                                        intelligence and should not be
+                                        considered as financial advice.
                                     </p>
                                     <ul>
                                         <li>

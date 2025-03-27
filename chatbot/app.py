@@ -60,6 +60,65 @@ def chat():
             'error': 'Sorry, there was an error processing your request. Please try again.'
         }), 500
 
+
+@app.route('/api/top_stocks', methods=['GET'])
+def get_top_stocks():
+    try:
+        # List of popular stock symbols
+        stock_symbols = [
+            "AAPL", "MSFT", "GOOGL", "AMZN", "TSLA", "META", "NVDA",
+            "JPM", "V", "PG", "DIS", "NFLX", "INTC", "AMD", "ADBE",
+            "PYPL", "CRM", "BAC", "WMT", "MA", "XOM", "T", "VZ"
+        ]
+
+        stock_data = []
+
+        for symbol in stock_symbols:
+            try:
+                stock = yf.Ticker(symbol)
+                hist = stock.history(period="3mo")
+                
+                if hist.empty:
+                    continue
+
+                current_price = stock.info.get('currentPrice', None)
+                low_52wk = stock.info.get('fiftyTwoWeekLow', None)
+                high_52wk = stock.info.get('fiftyTwoWeekHigh', None)
+                pe_ratio = stock.info.get('trailingPE', None)
+
+                if not all([current_price, low_52wk, high_52wk]):
+                    continue
+
+                upside = ((current_price - low_52wk) / low_52wk) * 100
+                momentum = ((hist['Close'][-1] - hist['Close'][-10]) / hist['Close'][-10]) * 100
+
+                stock_data.append({
+                    "symbol": symbol,
+                    "name": stock.info.get('shortName', symbol),
+                    "current_price": current_price,
+                    "52_week_low": low_52wk,
+                    "52_week_high": high_52wk,
+                    "pe_ratio": pe_ratio,
+                    "upside_pct": round(upside, 2),
+                    "momentum_pct": round(momentum, 2)
+                })
+            except Exception as e:
+                print(f"Error processing {symbol}: {e}")
+                continue
+
+        ranked_stocks = sorted(
+            stock_data,
+            key=lambda x: (x['upside_pct'] * 0.7 + x['momentum_pct'] * 0.3),
+            reverse=True
+        )
+
+        return jsonify({"top_stocks": ranked_stocks[:5]}), 200
+
+    except Exception as e:
+        print("Error:", e)
+        return jsonify({"error": "Failed to fetch top stocks."}), 500
+    
+
 @app.route('/api/recommendations', methods=['GET'])
 def get_recommendations():
     try:
