@@ -1,71 +1,128 @@
-# GenAI Finance
+# PennyVise - AI-Powered Stock Analysis Platform
 
-GenAI Finance is an AI-powered financial assistant designed to provide personalized financial insights, real-time stock analysis, and portfolio management tools. Built for both novice and expert investors, it leverages cutting-edge generative AI and financial APIs to deliver actionable recommendations.
+PennyVise is an intelligent stock analysis platform that leverages cutting-edge AI technology to provide comprehensive market insights, predictive analytics, and investment recommendations. Built for the modern investor, it combines real-time data with generative AI to deliver actionable financial intelligence.
 
----
+🌐 **Live Demo:** [https://pennyvise.netlify.app](https://pennyvise.netlify.app)
 
-## Features
+![PennyVise Platform](https://https://imagekit.io/tools/asset-public-link?detail=%7B%22name%22%3A%22Screenshot%202025-03-28%20002542.png%22%2C%22type%22%3A%22image%2Fpng%22%2C%22signedurl_expire%22%3A%222028-03-26T19%3A12%3A37.264Z%22%2C%22signedUrl%22%3A%22https%3A%2F%2Fmedia-hosting.imagekit.io%2F2b9b6c1dd9e148b2%2FScreenshot%25202025-03-28%2520002542.png%3FExpires%3D1837710757%26Key-Pair-Id%3DK2ZIVPTIP2VGHC%26Signature%3D3IuOHWlDuL6RZ~gWSZafyeREs52O9ks6R3KbZyadlFDVZFwvg0Ct4fzSwcaWCifL2OItmc~h84Qgf6ZOJvZGjeyZoHRrMJYH1I4JpNanzU37wiXyfnbbYMYoMgEeKPC9wMOFfLzM~qzUWWvE68~Y65HoYrGoUpfLjNc8fdgX65R5nJMk1KSPoWP7CfDLzgJigVknWwxt~9sTM4JvgATtk~K6O6bHSJJyit9SUXUSYEYBp1mV6pLqGldGxhk-dNnEwoErlgL0LADmdnrP093PxTlLyo08qsCWh0c7c8pcnUZTwhueilFKnNvCJacd8eZtqfNZVMEi~jYGqEVWSq~jRw__%22%7D) <!-- Add a screenshot of your platform -->
 
--   **AI-Powered Chatbot**: Ask financial questions and get instant AI-generated responses.
--   **Real-Time Stock Analysis**: Access live stock data and predictions.
--   **Portfolio Management**: Optimize your investments with AI-driven insights.
--   **Secure and Reliable**: State-of-the-art encryption ensures your data is safe.
--   **User-Friendly Interface**: Intuitive design for seamless navigation.
+## 🌟 Key Features
 
----
+- **AI-Powered Stock Analysis**: Get real-time analysis of any stock with advanced AI predictions
+- **Market Intelligence**: Comprehensive insights including technical and fundamental analysis
+- **Smart Recommendations**: Receive AI-generated investment recommendations with confidence scores
+- **Risk Assessment**: Detailed risk analysis for informed decision-making
+- **Top Stocks Tracking**: Monitor top-performing stocks with real-time updates
+- **Responsive Design**: Seamless experience across all devices
 
-## Tech Stack
+## 🚀 Technology Stack
 
--   **Frontend**: React, Vite, Framer Motion, Material-UI
--   **Backend**: Flask, Flask-CORS, Google Generative AI, Yahoo Finance API
--   **APIs**: OpenAI, Yahoo Finance
--   **Styling**: CSS Modules, TailwindCSS
--   **Deployment**: Local development with Node.js and Python
+### Frontend
+- React.js with Vite
+- Framer Motion for animations
+- CSS Modules for styling
+- React Router for navigation
 
----
+### Backend
+- Flask RESTful API
+- Google Generative AI
+- Yahoo Finance API integration
+- Machine Learning models for predictions
 
-## Setup Instructions
+### APIs & Services
+- Gemini API for AI analysis
+- Yahoo Finance for real-time market data
+- RESTful architecture
+
+## 📊 Features in Detail
+
+### Stock Analysis
+- Real-time stock price tracking
+- Historical data analysis
+- Market cap and PE ratio insights
+- 52-week high/low tracking
+
+### AI Insights
+- Executive summaries
+- Technical analysis
+- Fundamental analysis
+- Risk assessment
+- Investment recommendations
+
+### User Experience
+- Intuitive interface
+- Real-time updates
+- Recent search history
+- Mobile-responsive design
+
+## 🛠️ Setup Instructions
 
 ### Backend Setup
+```bash
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-1. **Create a virtual environment**:
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    ```
-2. Install dependencies:
+# Install dependencies
 pip install -r requirements.txt
 
-3.Set up environment variables:
-Create a .env file in the chatbot directory with the following:
+# Set environment variables
+# Create .env file with:
 GEMINI_API_KEY=your_gemini_api_key
 
-4.Run the Flask backend:
+# Run Flask backend
 python app.py
+```
 
-The backend will run on http://localhost:5000.
-
-FRONTEND SETUP:
-1.Install Node.js dependencies:
+### Frontend Setup
+```bash
+# Install dependencies
 npm install
 
-2.Start the React development server:
-npm start
+# Run development server
+npm run dev
+```
 
-The frontend will run on http://localhost:3000.
+## 📝 API Documentation
 
-Usage
-Open your browser and navigate to http://localhost:3000.
-Use the chatbot to ask financial questions or explore stock predictions.
-Enter stock symbols (e.g., AAPL, TSLA) to get real-time analysis and AI-powered insights.
-Manage your portfolio with actionable recommendations.
+### Stock Analysis Endpoint
+- `GET /api/stock?symbol={symbol}`
+- Returns detailed stock information
 
-API Endpoints
-Chatbot
-Endpoint: /api/chat
-Method: POST
-Description: Sends a user query to the chatbot and retrieves an AI-generated response.
-Stock Prediction
-Endpoint: /api/predict_with_info
-Method: GET
-Description: Fetches stock predictions and insights for a given stock symbol.
+### Prediction Endpoint
+- `GET /api/predict_with_info?symbol={symbol}`
+- Returns AI-powered predictions and analysis
+
+### Top Stocks Endpoint
+- `GET /api/top_stocks`
+- Returns current top-performing stocks
+
+## 🎯 Hackathon Goals
+
+1. **Innovation**: Implementing cutting-edge AI for financial analysis
+2. **Accessibility**: Making stock analysis accessible to all users
+3. **Real-time Analysis**: Providing instant, accurate market insights
+4. **User Experience**: Creating an intuitive, responsive interface
+
+## 👥 Team
+
+- **Omkar Mutyalwar** - Web Development
+- **Vaishnav Mankar** - MLOps
+- **Sakshi Shinde** - Team Lead
+- **Pranav Chaudhari** - UI/UX Design
+
+## 🔮 Future Enhancements
+
+- Portfolio management features
+- Advanced technical indicators
+- Social sharing capabilities
+- Mobile app development
+- Real-time market news integration
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Built with 💙 by Team PennyVise for [Hackathon Name] 2024
