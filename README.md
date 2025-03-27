@@ -1,9 +1,9 @@
-# GenAI Finance
+# PeenyVise Finance
 
-![Project Banner](./assets/banner-placeholder.png)  // Add your banner image here
+<!-- ![Project Banner](./frontend/assests/landing.png)  // Add your banner image here -->
 
-GenAI Finance is an AI-powered financial assistant designed to provide personalized financial insights, real-time stock analysis, and portfolio management tools. Built for both novice and expert investors, it leverages cutting-edge generative AI and financial APIs to deliver actionable recommendations.  
-Hosted on Netlify: [Live Demo](https://your-netlify-app.netlify.app)
+PeenyVise Finance is an AI-powered financial assistant designed to provide personalized financial insights, real-time stock analysis, and portfolio management tools. Built for both novice and expert investors, it leverages cutting-edge generative AI and financial APIs to deliver actionable recommendations.  
+Hosted on Netlify: [Live Demo](https://pennyvise.netlify.app/)
 
 ---
 
@@ -17,7 +17,7 @@ Hosted on Netlify: [Live Demo](https://your-netlify-app.netlify.app)
 - **User-Friendly Interface**: Intuitive design for seamless navigation.
 - **Dynamic Visuals**: Stunning UI with integrated images and animations.
 
-> ![Screenshot](./assets/screenshot-placeholder.png)  // Add a screenshot of your UI here
+> ![Screenshot](./frontend/assests/landing.png)  // Add a screenshot of your UI here
 
 ---
 
