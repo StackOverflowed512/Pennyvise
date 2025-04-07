@@ -182,7 +182,7 @@ const Home = () => {
                         <Link to="/signup">
                             <NewGetStartedButton />
                         </Link>
-                        <Link to="/demo" className={styles.ctaButtonSecondary}>
+                        <Link to="/" className={styles.ctaButtonSecondary}>
                             <NewWatchButton />
                         </Link>
                     </motion.div>
@@ -426,7 +426,7 @@ const Home = () => {
                         <Link to="/signup">
                             <NewGetStartedButton />
                         </Link>
-                        <Link to="/demo" className={styles.ctaButtonSecondary}>
+                        <Link to="/" className={styles.ctaButtonSecondary}>
                             <NewWatchButton />
                         </Link>
                     </div>
