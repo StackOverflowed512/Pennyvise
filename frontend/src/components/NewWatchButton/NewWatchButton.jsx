@@ -2,6 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = () => {
+  const openYouTubeVideo = () => {
+    window.open('https://youtu.be/R-SImfE75B8', '_blank');
+  };
+  
   return (
     <StyledWrapper>
       <button className="button-with-icon">
